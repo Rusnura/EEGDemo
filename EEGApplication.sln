@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EEGApplication", "EEGApplication\EEGApplication.csproj", "{DB6D0EC2-E832-4641-B245-9DC2E2F3DBF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB6D0EC2-E832-4641-B245-9DC2E2F3DBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6D0EC2-E832-4641-B245-9DC2E2F3DBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6D0EC2-E832-4641-B245-9DC2E2F3DBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6D0EC2-E832-4641-B245-9DC2E2F3DBF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED8FC563-D748-4F03-A911-592F676B3F38}
+	EndGlobalSection
+EndGlobal

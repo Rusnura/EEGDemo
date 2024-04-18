@@ -1,0 +1,7 @@
+D:\Projects\NET\EEGApplication\EEGApplication\bin\Debug\EEGApplication.exe.config
+D:\Projects\NET\EEGApplication\EEGApplication\bin\Debug\EEGApplication.exe
+D:\Projects\NET\EEGApplication\EEGApplication\bin\Debug\EEGApplication.pdb
+D:\Projects\NET\EEGApplication\EEGApplication\obj\Debug\EEGApplication.csproj.AssemblyReference.cache
+D:\Projects\NET\EEGApplication\EEGApplication\obj\Debug\EEGApplication.csproj.CoreCompileInputs.cache
+D:\Projects\NET\EEGApplication\EEGApplication\obj\Debug\EEGApplication.exe
+D:\Projects\NET\EEGApplication\EEGApplication\obj\Debug\EEGApplication.pdb
