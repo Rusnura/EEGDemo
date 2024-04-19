@@ -43,10 +43,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="enums\eNSK_ALGO_CB_TYPE.cs" />
+    <Compile Include="enums\eNSK_ALGO_DATA_TYPE.cs" />
+    <Compile Include="enums\eNSK_ALGO_F2_PROGRESS_LEVEL.cs" />
     <Compile Include="enums\eNSK_ALGO_RET.cs" />
+    <Compile Include="enums\eNSK_ALGO_SIGNAL_QUALITY.cs" />
+    <Compile Include="enums\eNSK_ALGO_STATE.cs" />
     <Compile Include="enums\eNSK_ALGO_TYPE.cs" />
+    <Compile Include="enums\NS_ALGO_BCQ_VALID_TYPE.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="structs\NS_ALGO_AL_INDEX.cs" />
+    <Compile Include="structs\NS_ALGO_BP_INDEX.cs" />
+    <Compile Include="structs\NS_ALGO_CP_INDEX.cs" />
+    <Compile Include="structs\NS_ALGO_CR_INDEX.cs" />
+    <Compile Include="structs\NS_ALGO_F2_INDEX.cs" />
+    <Compile Include="structs\NS_ALGO_F_INDEX.cs" />
+    <Compile Include="structs\NS_ALGO_ME2_INDEX.cs" />
+    <Compile Include="structs\NS_ALGO_ME_INDEX.cs" />
+    <Compile Include="structs\sNSK_ALGO_CB_PARAM.cs" />
+    <Compile Include="structs\sNSK_ALGO_INDEX.cs" />
+    <Compile Include="structs\sNSK_ALGO_INDEX_GROUP.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
