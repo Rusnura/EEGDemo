@@ -41,6 +41,14 @@
             tb_med_level = new TrackBar();
             lbl_att_lebel = new Label();
             lbl_med_lebel = new Label();
+            lbl_utl_server = new Label();
+            txt_server_url = new TextBox();
+            btn_car_up = new Button();
+            btn_car_down = new Button();
+            btn_car_right = new Button();
+            btn_car_left = new Button();
+            lbl_att_level_per = new Label();
+            lbl_med_level_per = new Label();
             statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)tbar_att_level).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tb_med_level).BeginInit();
@@ -129,24 +137,26 @@
             // 
             // tbar_att_level
             // 
-            tbar_att_level.Location = new Point(644, 24);
+            tbar_att_level.Location = new Point(644, 43);
             tbar_att_level.Maximum = 100;
             tbar_att_level.Name = "tbar_att_level";
             tbar_att_level.Size = new Size(861, 69);
             tbar_att_level.TabIndex = 8;
+            tbar_att_level.ValueChanged += tbar_att_level_ValueChanged;
             // 
             // tb_med_level
             // 
-            tb_med_level.Location = new Point(644, 94);
+            tb_med_level.Location = new Point(644, 130);
             tb_med_level.Maximum = 100;
             tb_med_level.Name = "tb_med_level";
             tb_med_level.Size = new Size(861, 69);
             tb_med_level.TabIndex = 9;
+            tb_med_level.ValueChanged += tb_med_level_ValueChanged;
             // 
             // lbl_att_lebel
             // 
             lbl_att_lebel.AutoSize = true;
-            lbl_att_lebel.Location = new Point(526, 24);
+            lbl_att_lebel.Location = new Point(526, 43);
             lbl_att_lebel.Name = "lbl_att_lebel";
             lbl_att_lebel.Size = new Size(97, 25);
             lbl_att_lebel.TabIndex = 10;
@@ -155,17 +165,100 @@
             // lbl_med_lebel
             // 
             lbl_med_lebel.AutoSize = true;
-            lbl_med_lebel.Location = new Point(526, 94);
+            lbl_med_lebel.Location = new Point(526, 130);
             lbl_med_lebel.Name = "lbl_med_lebel";
             lbl_med_lebel.Size = new Size(107, 25);
             lbl_med_lebel.TabIndex = 11;
             lbl_med_lebel.Text = "Медитация:";
+            // 
+            // lbl_utl_server
+            // 
+            lbl_utl_server.AutoSize = true;
+            lbl_utl_server.Location = new Point(12, 216);
+            lbl_utl_server.Name = "lbl_utl_server";
+            lbl_utl_server.Size = new Size(246, 25);
+            lbl_utl_server.TabIndex = 12;
+            lbl_utl_server.Text = "URL до сервера управления:";
+            // 
+            // txt_server_url
+            // 
+            txt_server_url.Location = new Point(12, 244);
+            txt_server_url.Name = "txt_server_url";
+            txt_server_url.Size = new Size(419, 31);
+            txt_server_url.TabIndex = 13;
+            txt_server_url.Text = "http://192.168.1.222";
+            // 
+            // btn_car_up
+            // 
+            btn_car_up.Location = new Point(130, 281);
+            btn_car_up.Name = "btn_car_up";
+            btn_car_up.Size = new Size(112, 34);
+            btn_car_up.TabIndex = 14;
+            btn_car_up.Text = "Up";
+            btn_car_up.UseVisualStyleBackColor = true;
+            btn_car_up.Click += btn_car_up_Click;
+            // 
+            // btn_car_down
+            // 
+            btn_car_down.Location = new Point(130, 321);
+            btn_car_down.Name = "btn_car_down";
+            btn_car_down.Size = new Size(112, 34);
+            btn_car_down.TabIndex = 15;
+            btn_car_down.Text = "Down";
+            btn_car_down.UseVisualStyleBackColor = true;
+            btn_car_down.Click += btn_car_down_Click;
+            // 
+            // btn_car_right
+            // 
+            btn_car_right.Location = new Point(248, 300);
+            btn_car_right.Name = "btn_car_right";
+            btn_car_right.Size = new Size(112, 34);
+            btn_car_right.TabIndex = 16;
+            btn_car_right.Text = "Right";
+            btn_car_right.UseVisualStyleBackColor = true;
+            btn_car_right.Click += btn_car_right_Click;
+            // 
+            // btn_car_left
+            // 
+            btn_car_left.Location = new Point(12, 300);
+            btn_car_left.Name = "btn_car_left";
+            btn_car_left.Size = new Size(112, 34);
+            btn_car_left.TabIndex = 17;
+            btn_car_left.Text = "Left";
+            btn_car_left.UseVisualStyleBackColor = true;
+            btn_car_left.Click += btn_car_left_Click;
+            // 
+            // lbl_att_level_per
+            // 
+            lbl_att_level_per.AutoSize = true;
+            lbl_att_level_per.Location = new Point(1446, 19);
+            lbl_att_level_per.Name = "lbl_att_level_per";
+            lbl_att_level_per.Size = new Size(37, 25);
+            lbl_att_level_per.TabIndex = 18;
+            lbl_att_level_per.Text = "0%";
+            // 
+            // lbl_med_level_per
+            // 
+            lbl_med_level_per.AutoSize = true;
+            lbl_med_level_per.Location = new Point(1446, 102);
+            lbl_med_level_per.Name = "lbl_med_level_per";
+            lbl_med_level_per.Size = new Size(37, 25);
+            lbl_med_level_per.TabIndex = 19;
+            lbl_med_level_per.Text = "0%";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1517, 1011);
+            Controls.Add(lbl_med_level_per);
+            Controls.Add(lbl_att_level_per);
+            Controls.Add(btn_car_left);
+            Controls.Add(btn_car_right);
+            Controls.Add(btn_car_down);
+            Controls.Add(btn_car_up);
+            Controls.Add(txt_server_url);
+            Controls.Add(lbl_utl_server);
             Controls.Add(lbl_med_lebel);
             Controls.Add(lbl_att_lebel);
             Controls.Add(tb_med_level);
@@ -204,5 +297,13 @@
         private TrackBar tb_med_level;
         private Label lbl_att_lebel;
         private Label lbl_med_lebel;
+        private Label lbl_utl_server;
+        private TextBox txt_server_url;
+        private Button btn_car_up;
+        private Button btn_car_down;
+        private Button btn_car_right;
+        private Button btn_car_left;
+        private Label lbl_att_level_per;
+        private Label lbl_med_level_per;
     }
 }

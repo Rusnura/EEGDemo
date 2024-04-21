@@ -6,8 +6,11 @@ namespace NeuroSkySDKApp
     public partial class Form1 : Form
     {
         private static Form1 window;
+
+        private static CarRemoteController remoteController = new CarRemoteController();
         private NativeThinkgear nativeThinkgear = new NativeThinkgear();
         private NativeAlgoSdk64 nativeAlgoSdk64 = new NativeAlgoSdk64();
+
 
         private int connectionId = -1;
         private bool isConnectedHeadset = false;
@@ -130,13 +133,20 @@ namespace NeuroSkySDKApp
                 {
                     float att = param.param.index.value.att_index;
                     //window.log("Attention level is: " + att);
-                    window.tbar_att_level.Invoke (() => window.tbar_att_level.Value = (int) att);
+                    window.tbar_att_level.Invoke(() => window.tbar_att_level.Value = (int)att);
+
+                    if (att >= 50)
+                    {
+                        remoteController.go(window.txt_server_url.Text);
+                        Thread.Sleep(200);
+                        remoteController.stop(window.txt_server_url.Text);
+                    }
                 }
                 else if (param.param.index.type == EEGApplication.enums.eNSK_ALGO_TYPE.NSK_ALGO_TYPE_MED)
                 {
                     float med = param.param.index.value.med_index;
                     //window.log("Meditation level is: " + med);
-                    window.tb_med_level.Invoke(() => window.tb_med_level.Value = (int) med);
+                    window.tb_med_level.Invoke(() => window.tb_med_level.Value = (int)med);
                 }
                 else if (param.param.index.type == EEGApplication.enums.eNSK_ALGO_TYPE.NSK_ALGO_TYPE_BLINK)
                 {
@@ -191,6 +201,36 @@ namespace NeuroSkySDKApp
         {
             NativeAlgoSdk64.NSK_ALGO_Init(EEGApplication.enums.eNSK_ALGO_TYPE.NSK_ALGO_TYPE_ATT | EEGApplication.enums.eNSK_ALGO_TYPE.NSK_ALGO_TYPE_MED | EEGApplication.enums.eNSK_ALGO_TYPE.NSK_ALGO_TYPE_BLINK, "D:\\Projects\\NET\\NeuroSkySDKApp\\NeuroSkySDKApp\\bin\\Debug\\net8.0-windows\\");
             NativeAlgoSdk64.NSK_ALGO_RegisterCallback(callback, IntPtr.Zero);
+        }
+
+        private void btn_car_up_Click(object sender, EventArgs e)
+        {
+            remoteController.go(window.txt_server_url.Text);
+        }
+
+        private void btn_car_down_Click(object sender, EventArgs e)
+        {
+            remoteController.stop(window.txt_server_url.Text);
+        }
+
+        private void btn_car_right_Click(object sender, EventArgs e)
+        {
+            remoteController.right(window.txt_server_url.Text);
+        }
+
+        private void btn_car_left_Click(object sender, EventArgs e)
+        {
+            remoteController.left(window.txt_server_url.Text);
+        }
+
+        private void tbar_att_level_ValueChanged(object sender, EventArgs e)
+        {
+            lbl_att_level_per.Text = tbar_att_level.Value + "%";
+        }
+
+        private void tb_med_level_ValueChanged(object sender, EventArgs e)
+        {
+            lbl_med_level_per.Text = tb_med_level.Value + "%";
         }
     }
 }
